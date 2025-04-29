@@ -1,4 +1,4 @@
-# 📢 Simulação de Mundo - Propagação de Rumores
+# Simulação de Mundo - Propagação de Rumores
 
 ## 📋 Visão Geral
 Simulação de um mundo virtual onde 100 pessoas se movem entre 8 locais diferentes e compartilham 30 rumores únicos. O projeto implementa estruturas de dados avançadas em C para modelar as interações sociais baseadas em características individuais como extroversão, paciência e idade.
@@ -6,32 +6,42 @@ Simulação de um mundo virtual onde 100 pessoas se movem entre 8 locais diferen
 ## 🏗️ Estrutura do Projeto
 ```
 simulacao-mundo/
-├── libconjunto.c   # Implementação do TAD Conjunto
-├── libconjunto.h   # Interface do TAD Conjunto
-├── libfila.c       # Implementação do TAD Fila
-├── libfila.h       # Interface do TAD Fila
-├── liblef.c        # Implementação do TAD LEF
-├── liblef.h        # Interface do TAD LEF
-├── libmundo.c      # Implementação da lógica do mundo
-├── libmundo.h      # Definições de estruturas do mundo
-└── mundo.c         # Programa principal da simulação
+├── libconjunto.c # Implementação do TAD Conjunto
+├── libconjunto.h # Interface do TAD Conjunto
+├── libfila.c # Implementação do TAD Fila
+├── libfila.h # Interface do TAD Fila
+├── liblef.c # Implementação do TAD LEF
+├── liblef.h # Interface do TAD LEF
+├── libmundo.c # Implementação da lógica do mundo
+├── libmundo.h # Definições de estruturas do mundo
+├── mundo.c # Programa principal da simulação
+└── Makefile # Script de compilação automatizada
 ```
 
 ## 🚀 Como Executar
 
 ### Pré-requisitos
-- Compilador **GCC**
-- Sistema Unix-like (**Linux/MacOS**) ou **Windows com WSL**
+- Compilador GCC
+- Sistema Unix-like (Linux/MacOS) ou Windows com WSL
 
 ### Compilação
 ```bash
-gcc -std=c99 -Wall -o simulacao *.c
+make
 ```
 
 ### Execução
 ```bash
-./simulacao
+./mundo
 ```
+
+### Limpeza
+```bash
+make clean    # Remove arquivos temporários
+make purge    # Remove todos os arquivos gerados
+```
+
+## 🔧 Makefile
+O projeto inclui um Makefile para facilitar a compilação com regras para compilar, limpar e remover arquivos.
 
 ## 🧩 Componentes Principais
 
@@ -49,7 +59,7 @@ Cada local possui:
 - `lotacao_max (5-30)`: Capacidade máxima
 - `publico`: Conjunto de pessoas presentes
 - `fila_local`: Fila de espera quando lotado
-- Coordenadas `(x, y)` no mundo
+- `coordenadas (x,y)` no mundo
 
 ### 📢 Rumores
 - 30 rumores únicos identificados por `id_rumor`
@@ -63,7 +73,7 @@ Cada local possui:
 
 ### Eventos:
 - **CHEGADA**: Pessoa chega em um local
-- **SAIDA**: Pessoa deixa o local
+- **SAÍDA**: Pessoa deixa o local
 - **RUMOR**: Pessoa compartilha rumores
 - **FIM**: Término da simulação
 
@@ -73,7 +83,7 @@ Cada local possui:
 - Rumores são compartilhados aleatoriamente
 - Sistema de filas quando locais estão lotados
 
-## 📊 Exemplo de Saída
+### 📊 Exemplo de Saída:
 ```
 1420:CHEGA Pessoa 12 Local 5 (8/15), ENTRA
 1425:RUMOR Pessoa 12 Local 5 (P8:R3) (P15:R7)
@@ -82,8 +92,8 @@ Cada local possui:
 
 ## 📚 Documentação dos TADs
 
-### Conjunto (libconjunto)
-Operações implementadas:
+### Conjunto (`libconjunto`)
+Operações:
 - `cria_conjunto()`, `destroi_conjunto()`
 - `insere_conjunto()`, `retira_conjunto()`
 - `pertence()`, `contido()`, `sao_iguais()`
@@ -94,28 +104,25 @@ Operações entre conjuntos:
 - `cria_diferenca()`
 - `cria_subconjunto()`: Gera subconjunto aleatório
 
-Possui também um iterador para percorrer elementos.
+- Iterador para percorrer elementos
 
-### Fila (libfila)
-Implementação com:
+### Fila (`libfila`)
 - Operações FIFO padrão (`insere_fila`, `retira_fila`)
 - Mecanismo iterador
 - Controle de tamanho
 - Nodos duplamente encadeados
 
-### LEF (liblef)
-Lista de Eventos Futuros com:
-- Inserção ordenada por tempo
+### LEF (`liblef`)
+- Lista de Eventos Futuros com inserção ordenada por tempo
 - Diferentes tipos de eventos
 - Mecanismo de processamento temporal
 
 ## ⚙️ Configurações do Mundo
-- Tamanho: `20000x20000` unidades
-- Duração: `34944` unidades de tempo (≈ 1 ano simulado)
-- População: `100` pessoas
-- Locais: `8` com lotação entre `5-30`
-- Rumores: `30` únicos
+- Tamanho: 20000x20000 unidades
+- Duração: 34944 unidades de tempo (≈ 1 ano simulado)
+- População: 100 pessoas
+- Locais: 8 com lotação 5-30
+- Rumores: 30 únicos
 
 ## 📜 Licença
-Projeto acadêmico desenvolvido para a disciplina de Programação 1 (CI1001).  
-Código aberto para fins educacionais.
+Projeto acadêmico desenvolvido para a disciplina de Programação 1 (CI1001). Código aberto para fins educacionais.
