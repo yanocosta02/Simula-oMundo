@@ -1,8 +1,5 @@
 # 📢 Simulação de Mundo - Propagação de Rumores
 
-![C](https://img.shields.io/badge/Linguagem-C-blue.svg)
-![Estruturas de Dados](https://img.shields.io/badge/Estruturas_de_Dados-Conjuntos,_Filas,_LEF-green.svg)
-
 ## 📋 Visão Geral
 Simulação de um mundo virtual onde 100 pessoas se movem entre 8 locais diferentes e compartilham 30 rumores únicos. O projeto implementa estruturas de dados avançadas em C para modelar as interações sociais baseadas em características individuais como extroversão, paciência e idade.
 
@@ -122,6 +119,3 @@ Lista de Eventos Futuros com:
 ## 📜 Licença
 Projeto acadêmico desenvolvido para a disciplina de Programação 1 (CI1001).  
 Código aberto para fins educacionais.
-
-## ✉️ Contato
-Para dúvidas ou sugestões, abra uma issue no repositório do projeto.
